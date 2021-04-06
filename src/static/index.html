@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Coda&family=Oxanium:wght@500&display=swap" rel="stylesheet">
+  <title>Brocolio Cipher</title>
+  <script>
+    // window["Module"] = {
+    //   arguments: [1, 0]
+    // }
+  </script>
+</head>
+
+<body>
+  <header>
+    <nav class="main-nav">
+      <h1>brocolio cipher</h1>
+      <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M17.7083 0H2.29167C1.0275 0 0 1.0275 0 2.29167V17.7083C0 18.9725 1.0275 20 2.29167 20H17.7083C18.9725 20 20 18.9725 20 17.7083V2.29167C20 1.0275 18.9725 0 17.7083 0ZM10 4.16667C10.46 4.16667 10.8333 4.54 10.8333 5C10.8333 5.46 10.46 5.83333 10 5.83333C9.54 5.83333 9.16667 5.46 9.16667 5C9.16667 4.54 9.54 4.16667 10 4.16667ZM11.875 15.8333H8.125C7.665 15.8333 7.29167 15.46 7.29167 15C7.29167 14.54 7.665 14.1667 8.125 14.1667H9.16667V9.16667H8.54167C8.08167 9.16667 7.70833 8.79333 7.70833 8.33333C7.70833 7.87333 8.08167 7.5 8.54167 7.5H10C10.46 7.5 10.8333 7.87333 10.8333 8.33333V14.1667H11.875C12.335 14.1667 12.7083 14.54 12.7083 15C12.7083 15.46 12.335 15.8333 11.875 15.8333Z" />
+      </svg>
+    </nav>
+
+  </header>
+
+  <main>
+    <section class="main-text">
+      <h1>online image<br>cipher tool</h1>
+      <h2>keep your images safe</h2>
+    </section>
+    <section class="cipher-section">
+      <form autocomplete="off" class="cipher-form">
+        <label class="cipher-button" for="cipher-form__input-file"> upload image</label>
+        <input type="file" id="cipher-form__input-file" accept="image/png" required>
+        <svg class="cipher-form__spinner" viewbox="0 0 40 40">
+          <circle cx="20" cy="20" r="18"></circle>
+        </svg>
+        <input type="text" maxlength="10" minlength="10" placeholder="insert key" required autofocus>
+        <input class="cipher-button" type="submit" value="cipher">
+        <a class="cipher-button"> download image</a>
+
+      </form>
+    </section>
+  </main>
+  <footer>
+
+  </footer>
+  <!-- <script src="./source/image-cipher.js"></script> -->
+
+</body>
+
+</html>

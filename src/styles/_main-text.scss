@@ -1,0 +1,20 @@
+@use "./mixins";
+
+.main-text {
+  min-height: 40vh;
+  @include mixins.flex($direction: column);
+  background-color: #01010d;
+  text-align: center;
+  text-transform: uppercase;
+  h1 {
+    font-family: "Coda", cursive;
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 2rem;
+  }
+  h2 {
+    font-family: "Coda", cursive;
+    font-size: 2rem;
+    color: #00f5d4;
+  }
+}

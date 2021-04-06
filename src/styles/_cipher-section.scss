@@ -1,0 +1,123 @@
+@use "./mixins";
+$cipher-form__spinner-size: 40;
+
+.cipher-button {
+  background-color: #01010d;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Coda", cursive;
+  font-size: 1.4rem;
+  border-style: solid;
+  border-width: 2px;
+  padding: 1rem;
+  border-radius: 5px;
+  border-color: #fff;
+}
+
+.cipher-section {
+  @include mixins.background-image("/src/assets/hero.jpg", top);
+  min-height: 50vh;
+  @include mixins.flex();
+}
+
+.cipher-form {
+  @include mixins.flex($direction: column);
+  label {
+    border-color: #fee440;
+  }
+  input[type="file"] {
+    position: absolute;
+    height: 0;
+    opacity: 0;
+  }
+
+  input[type="text"],
+  input[type="submit"] {
+    display: none;
+  }
+  a {
+    display: none;
+  }
+}
+
+.cipher-form__spinner {
+  display: none;
+  width: $cipher-form__spinner-size/10 + rem;
+  height: $cipher-form__spinner-size/10 + rem;
+  circle {
+    fill: transparent;
+    stroke: #01010d;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dasharray: (3.14 * $cipher-form__spinner-size);
+    transform-origin: (0.5px * $cipher-form__spinner-size) (0.5px * $cipher-form__spinner-size) 0;
+    animation: cipher-form__spinner 4s linear infinite;
+  }
+}
+
+.cipher-form--loading {
+  > * {
+    display: none;
+  }
+  .cipher-form__spinner {
+    display: block;
+  }
+}
+
+.cipher-form--with-border {
+  min-height: 30vh;
+  min-width: 30vh;
+
+  background-color: rgba($color: #fff, $alpha: 0.5);
+  backdrop-filter: blur(30px);
+  border-radius: 5px;
+}
+
+.cipher-form--insert-key {
+  > * {
+    display: none;
+  }
+  input[type="text"] {
+    box-sizing: content-box;
+    display: block;
+    font-size: 1.4rem;
+    border-style: none;
+    background-color: #01010d;
+    color: #fff;
+    margin: 0rem 3.5rem 3.5rem 3.5rem;
+    padding: 1rem;
+    font-family: "Oxanium", cursive;
+  }
+
+  input[type="submit"] {
+    display: block;
+    border-color: #f15bb5;
+  }
+}
+
+.cipher-form--download {
+  > * {
+    display: none;
+  }
+
+  a {
+    display: block;
+    border-color: #00f5d4;
+    text-decoration: none;
+  }
+}
+
+@keyframes cipher-form__spinner {
+  0% {
+    stroke-dashoffset: (0.66 * $cipher-form__spinner-size);
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(540deg);
+    stroke-dashoffset: (3.14 * $cipher-form__spinner-size);
+  }
+  100% {
+    transform: rotate(1080deg);
+    stroke-dashoffset: (0.66 * $cipher-form__spinner-size);
+  }
+}
