@@ -1,4 +1,4 @@
-import "./styles/index.scss";
+import "/src/styles/index.scss";
 
 
 const inputFile = document.getElementById("cipher-form__input-file");

@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 let config = {
-  entry: { index: path.resolve(__dirname, "src", "index.js") },
+  entry: { index: path.resolve(__dirname, "src", "javascript", "index.js") },
   output: {
     path: path.resolve(__dirname, "dist")
   },
@@ -31,7 +31,7 @@ let config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "source", "index.html"),
+      template: path.resolve(__dirname, "src", "static", "index.html"),
     })
   ],
 };
