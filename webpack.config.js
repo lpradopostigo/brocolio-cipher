@@ -2,11 +2,14 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 let config = {
-  entry: { index: path.resolve(__dirname, "src", "javascript", "index.js") },
+  entry: { index: "./src/javascript/index.js" },
   output: {
     path: path.resolve(__dirname, "dist")
   },
 
+  devServer: {
+    contentBase: './dist',
+  },
   module: {
 
     rules: [
