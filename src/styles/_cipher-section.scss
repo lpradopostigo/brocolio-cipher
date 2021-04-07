@@ -31,8 +31,11 @@ $cipher-form__spinner-size: 40;
     opacity: 0;
   }
 
-  input[type="text"],
   input[type="submit"] {
+    display: none;
+  }
+
+  .cipher-form__key {
     display: none;
   }
   a {
