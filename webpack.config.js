@@ -2,6 +2,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 let config = {
+  experiments: {
+    asyncWebAssembly: true
+  },
   entry: { index: "./src/javascript/index.js" },
   output: {
     path: path.resolve(__dirname, "dist")
@@ -26,10 +29,10 @@ let config = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
-      {
-        test: /\.wasm$/,
-        type: 'webassembly/async',
-      }
+      // {
+      //   test: /\.wasm$/,
+      //   type: 'webassembly/async',
+      // }
     ]
   },
   plugins: [

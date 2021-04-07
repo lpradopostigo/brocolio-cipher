@@ -1,4 +1,5 @@
 import "/src/styles/index.scss";
+import { cipher_image as cipherImage } from "image_cipher";
 
 
 const inputFile = document.getElementById("cipher-form__input-file");
@@ -22,7 +23,6 @@ function onSelectFile() {
 
   reader.onloadend = () => {
     cipherForm.classList.remove("cipher-form--loading");
-    FS.writeFile("input.png", new Uint8Array(reader.result));
     cipherForm.classList.add("cipher-form--insert-key");
     console.log("read complete");
   };
@@ -33,17 +33,10 @@ function onSelectFile() {
 
 function onSubmit(e) {
   e.preventDefault();
-  const key = cipherForm.querySelector('input[type="text"]').value;
+  const key = cipherForm.querySelector('.cipher-form__key').value;
 
   cipherForm.classList.remove("cipher-form--insert-key");
-  cipherForm.classList.add("cipher-form--loading");
-
-  setTimeout(() => {
-    Module.callMain(["input.png", key, "output.png"]);
-    const ouputImage = new Blob([new Uint8Array(FS.readFile("output.png"))]);
-    cipherForm.classList.remove("cipher-form--loading");
-    cipherForm.classList.add("cipher-form--download");
-
-  }, 10);
+  // cipherForm.classList.add("cipher-form--loading");
+  cipherForm.classList.add("cipher-form--download");
 
 }
