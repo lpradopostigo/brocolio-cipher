@@ -1,5 +1,5 @@
 import "/src/styles/index.scss";
-import { cipher_image as cipherImage } from "image_cipher";
+import { cipher_image as cipherImage } from "./image-cipher/image_cipher";
 
 
 const inputFile = document.getElementById("cipher-form__input-file");
