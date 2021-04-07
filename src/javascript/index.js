@@ -4,10 +4,14 @@ import { cipher_image as cipherImage } from "./image-cipher/image_cipher";
 
 const inputFile = document.getElementById("cipher-form__input-file");
 const cipherForm = document.querySelector(".cipher-form");
+const downloadButton = document.querySelector(".cipher-form a");
 
 inputFile.addEventListener("change", onSelectFile);
 cipherForm.addEventListener("submit", onSubmit);
+// downloadButton.addEventListener("click", saveImage);
 
+let inputData;
+let outputData;
 
 function onSelectFile() {
   cipherForm.classList.add("cipher-form--with-border");
@@ -25,9 +29,11 @@ function onSelectFile() {
     cipherForm.classList.remove("cipher-form--loading");
     cipherForm.classList.add("cipher-form--insert-key");
     console.log("read complete");
+    inputData = new Uint8Array(reader.result);
   };
 
   reader.readAsArrayBuffer(inputImage);
+
 }
 
 
@@ -36,7 +42,13 @@ function onSubmit(e) {
   const key = cipherForm.querySelector('.cipher-form__key').value;
 
   cipherForm.classList.remove("cipher-form--insert-key");
-  // cipherForm.classList.add("cipher-form--loading");
-  cipherForm.classList.add("cipher-form--download");
+  cipherForm.classList.add("cipher-form--loading");
+  setTimeout(() => {
+    outputData = new Blob([cipherImage(inputData, key)], { type: "image/png" });
+    cipherForm.classList.add("cipher-form--download");
+    cipherForm.classList.remove("cipher-form--loading");
+    downloadButton.href = URL.createObjectURL(outputData);
+
+  }, 300);
 
 }

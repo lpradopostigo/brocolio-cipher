@@ -11,7 +11,7 @@ let config = {
   },
 
   devServer: {
-    contentBase: './dist',
+    contentBase: path.resolve(__dirname, "dist"),
   },
   module: {
 
@@ -20,11 +20,11 @@ let config = {
         test: /\.s[ac]ss$/,
         use: ["style-loader", "css-loader", "sass-loader"]
       },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: ["babel-loader"]
-      },
+      // {
+      //   test: /\.js$/,
+      //   exclude: /node_modules/,
+      //   use: ["babel-loader"]
+      // },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
@@ -45,7 +45,7 @@ let config = {
 
 module.exports = (env, argv) => {
   if (argv.mode === 'development') {
-    config.devtool = 'eval-cheap-module-source-map';
+    config.devtool = 'inline-source-map';
   }
 
   return config;

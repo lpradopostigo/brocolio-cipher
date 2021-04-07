@@ -80,7 +80,7 @@ $cipher-form__spinner-size: 40;
   > * {
     display: none;
   }
-  input[type="text"] {
+  .cipher-form__key {
     box-sizing: content-box;
     display: block;
     font-size: 1.4rem;
