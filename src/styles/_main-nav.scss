@@ -1,6 +1,7 @@
 .main-header {
   position: sticky;
   top: 0;
+  z-index: 2;
 }
 
 .main-nav {
@@ -8,7 +9,6 @@
 
   display: grid;
   grid-template: 1fr/ 5% 1fr 1fr 5%;
-  z-index: 3;
   background-color: #01010d;
   align-items: center;
   h1 {
