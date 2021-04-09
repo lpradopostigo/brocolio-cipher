@@ -18,7 +18,7 @@ $cipher-form__spinner-size: 40;
   @include mixins.background-image("/src/assets/hero.jpg", top);
   min-height: 50vh;
   @include mixins.flex();
-  box-shadow: inset 0px -50px 40px #01010d;
+  box-shadow: inset 0px -8vh 50px #01010d;
 }
 
 .cipher-form {

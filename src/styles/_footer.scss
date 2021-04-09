@@ -1,8 +1,24 @@
+@use "./mixins";
 footer {
   background-color: #01010d;
   min-height: 20vh;
+  color: #fff;
+  @include mixins.flex(column, center, unset);
+
   div {
-    background-color: #f15bb5;
-    height: 0.5rem;
+    width: 90%;
   }
+  h1 {
+    font-size: 1.4rem;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    text-align: end;
+  }
+}
+.line {
+  background-color: #f15bb5;
+  height: 0.5rem;
+  width: 100%;
+  align-self: start;
+  margin-bottom: 2rem;
 }

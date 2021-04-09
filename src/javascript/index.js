@@ -1,7 +1,6 @@
 import "/src/styles/index.scss";
 import { cipher_image as cipherImage } from "./image-cipher/image_cipher";
 
-
 const inputFile = document.getElementById("cipher-form__input-file");
 const cipherForm = document.querySelector(".cipher-form");
 const downloadButton = document.querySelector(".cipher-form a");
