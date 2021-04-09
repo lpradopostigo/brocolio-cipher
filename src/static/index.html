@@ -43,7 +43,8 @@
         <svg class="cipher-form__spinner" viewbox="0 0 40 40">
           <circle cx="20" cy="20" r="18"></circle>
         </svg>
-        <input class="cipher-form__key" type="text" maxlength="15" minlength="1" placeholder="insert key" required>
+        <input class="cipher-form__key" type="text" maxlength="15" minlength="1" pattern="[\x00-\x7F]+"
+          placeholder="insert key" required>
         <input class="cipher-button" type="submit" value="cipher">
         <a class="cipher-button" download="ouput.png"> download image</a>
 
@@ -51,22 +52,18 @@
     </section>
     <section class="help" id="help">
       <div>
-        <h1>
-          usage
-        </h1>
-        <h2 class="help__cipher">
-          cipher
-        </h2>
+        <h1>usage</h1>
+        <h2 class="help__cipher">cipher</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat odio, repellat cumque officiis fugiat aliquid
-          voluptas ipsum dolore assumenda qui facilis corporis error dicta natus adipisci eum, porro accusamus? Nulla.
+          Upload a <b>png image</b>, then insert a key which will be used the cipher process. After that, press the
+          cipher button, wait a moment and you will be able to download the ciphered image.
         </p>
-        <h2 class="help__decipher">
-          decipher
-        </h2>
+
+        <h2 class="help__decipher">decipher</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat odio, repellat cumque officiis fugiat aliquid
-          voluptas ipsum dolore assumenda qui facilis corporis error dicta natus adipisci eum, porro accusamus? Nulla.
+          Upload the previously ciphered image, then insert the key that was used on the cipher process. After that,
+          press the
+          cipher button, wait a moment and you will be able to download the deciphered image.
         </p>
       </div>
     </section>

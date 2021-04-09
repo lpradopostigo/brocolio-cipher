@@ -7,7 +7,6 @@ const downloadButton = document.querySelector(".cipher-form a");
 
 inputFile.addEventListener("change", onSelectFile);
 cipherForm.addEventListener("submit", onSubmit);
-// downloadButton.addEventListener("click", saveImage);
 
 let inputData;
 let outputData;
