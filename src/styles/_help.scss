@@ -1,0 +1,38 @@
+@use "./mixins";
+.help {
+  min-height: 70vh;
+  background-color: #01010d;
+  color: #fff;
+  font-family: "Quicksand", sans-serif;
+  @include mixins.flex();
+  div {
+    width: 80%;
+  }
+
+  h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .help__cipher {
+    color: #00f5d4;
+  }
+
+  .help__decipher {
+    margin-top: 1.5rem;
+    color: #00bbf9;
+  }
+  p {
+    font-size: 1.4rem;
+    font-weight: 300;
+    font-family: "Roboto", sans-serif;
+  }
+}

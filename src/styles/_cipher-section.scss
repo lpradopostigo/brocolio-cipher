@@ -18,6 +18,7 @@ $cipher-form__spinner-size: 40;
   @include mixins.background-image("/src/assets/hero.jpg", top);
   min-height: 50vh;
   @include mixins.flex();
+  box-shadow: inset 0px -50px 40px #01010d;
 }
 
 .cipher-form {
@@ -87,9 +88,12 @@ $cipher-form__spinner-size: 40;
     border-style: none;
     background-color: #01010d;
     color: #fff;
-    margin: 0rem 3.5rem 3.5rem 3.5rem;
+    margin: 0rem 5vh 5vh 5vh;
     padding: 1rem;
     font-family: "Oxanium", cursive;
+    &:focus {
+      outline: none;
+    }
   }
 
   input[type="submit"] {

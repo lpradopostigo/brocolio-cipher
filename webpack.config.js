@@ -20,19 +20,15 @@ let config = {
         test: /\.s[ac]ss$/,
         use: ["style-loader", "css-loader", "sass-loader"]
       },
-      // {
-      //   test: /\.js$/,
-      //   exclude: /node_modules/,
-      //   use: ["babel-loader"]
-      // },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ["babel-loader"]
+      },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
-      // {
-      //   test: /\.wasm$/,
-      //   type: 'webassembly/async',
-      // }
     ]
   },
   plugins: [
